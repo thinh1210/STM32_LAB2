@@ -150,7 +150,6 @@ void updateLEDMatrix (int index){
 
 void updateshift(){
 	shift++;
-	if(shift>=8) shift=0;
 }
 void updateLEDMatrix_shift (int index){
 	int realshift= (index+shift)%8;
