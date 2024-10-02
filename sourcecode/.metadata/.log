@@ -1063,3 +1063,6 @@ Caused by: java.nio.channels.UnresolvedAddressException
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-10-02 11:39:39.740
 !MESSAGE Indexed 'lab2' (17 sources, 78 headers) in 2.79 sec: 3,632 declarations; 13,137 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-10-02 13:10:05.744
+!MESSAGE Indexed 'lab2' (19 sources, 83 headers) in 0.891 sec: 4,887 declarations; 29,995 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)

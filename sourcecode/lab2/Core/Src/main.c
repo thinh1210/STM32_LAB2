@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include<SEGMENT_7_LED.h>
+#include<EX1.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -127,8 +128,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+  Setup_time(0, 500);
+  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+  while(1){
+	  task_in_state();
+	  if(actions[0].timer_flag==1){
+		  change_state();
+		  reset(0);
+	  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -277,6 +285,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timer_run();
+
 }
 /* USER CODE END 4 */
 
