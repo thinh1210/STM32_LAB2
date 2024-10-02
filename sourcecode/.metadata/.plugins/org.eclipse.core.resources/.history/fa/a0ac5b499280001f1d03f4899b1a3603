@@ -128,12 +128,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int buffer_led[]= {1,2,3,0};
   Setup_time(0, 500);
   while(1){
-	  task_in_state_ex2(buffer_led[state_ex2]);
+	  task_in_state();
 	  if(actions[0].timer_flag==1){
-		  change_state_ex2();
+		  change_state();
 		  reset(0);
 	  }
 
