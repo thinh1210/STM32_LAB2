@@ -128,12 +128,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  Setup_time(0, 250);
-  int state_q4=EN0;
+  Setup_time(0, 500);
+  int state_q3=EN0;
   while(1){
-	  update7SEG(state_q4);
+	  update7SEG(state_q3);
 	  if(actions[0].timer_flag==1){
-		  change_state(&state_q4);
+		  change_state(&state_q3);
 		  reset(0);
 	  }
 
