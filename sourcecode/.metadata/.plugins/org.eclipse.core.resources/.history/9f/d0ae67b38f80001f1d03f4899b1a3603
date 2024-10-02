@@ -130,8 +130,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   Setup_time(0, 500);
   HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
-  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
-  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
   while(1){
 	  task_in_state();
 	  if(actions[0].timer_flag==1){

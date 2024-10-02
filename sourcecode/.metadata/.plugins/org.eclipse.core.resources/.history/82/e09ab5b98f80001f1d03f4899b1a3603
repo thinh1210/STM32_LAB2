@@ -22,7 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include<SEGMENT_7_LED.h>
-#include<EX1.h>
+#include<EX2.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
