@@ -22,7 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include<SEGMENT_7_LED.h>
-#include<Ex3_4_5_6_7_8.h>
+#include<Ex3_4_5_6_7_8.h>.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -133,7 +133,7 @@ int main(void)
   while(1){
 	  update7SEG(state_q3);
 	  if(actions[0].timer_flag==1){
-		  change_state(&state_q3);
+		  change_state();
 		  reset(0);
 	  }
 
