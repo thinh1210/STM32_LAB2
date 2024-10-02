@@ -129,12 +129,10 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   updateTime();
-  Setup_time(0, 10); // update Time
-  Setup_time(1, 1000); // update DOT
-  Setup_time(2, 20);// update segment7led
-  int state=0;
+  Setup_time(0, 1000);
+  Setup_time(1, 1000);
+  Setup_time(2, 1000);
   while(1){
-	  update7SEG(state);
 	  if(actions[0].timer_flag==1){
 		  updateTime();
 		  reset(0);
@@ -142,10 +140,6 @@ int main(void)
 	  if(actions[1].timer_flag==1){
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		  reset(1);
-	  }
-	  if(actions[2].timer_flag==1){
-		  change_state(&state);
-		  reset(2);
 	  }
 
     /* USER CODE END WHILE */

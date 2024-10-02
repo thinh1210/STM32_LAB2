@@ -129,7 +129,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   updateTime();
-  Setup_time(0, 10); // update Time
+  Setup_time(0, 50); // update Time
   Setup_time(1, 1000); // update DOT
   Setup_time(2, 20);// update segment7led
   int state=0;
