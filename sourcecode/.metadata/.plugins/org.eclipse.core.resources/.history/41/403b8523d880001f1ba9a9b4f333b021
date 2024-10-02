@@ -22,7 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include<SEGMENT_7_LED.h>
-#include<Ex9_10.h>
+#include<Ex3_4_5_6_7_8.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -128,15 +128,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  Setup_time(0, 50);
-  int state=0;
+  Setup_time(0, 250);
   while(1){
-	  updateLEDMatrix(state);
+	  update7SEG(state_q4);
 	  if(actions[0].timer_flag==1){
-		  state++;
-		  if(state>=8){
-			  state=0;
-		  }
+		  change_state(&state_q4);
 		  reset(0);
 	  }
 

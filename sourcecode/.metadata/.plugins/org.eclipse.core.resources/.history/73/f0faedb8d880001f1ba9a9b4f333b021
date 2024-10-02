@@ -129,14 +129,11 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   Setup_time(0, 50);
-  int state=0;
+
   while(1){
-	  updateLEDMatrix(state);
+	  update7SEG(state_q4);
 	  if(actions[0].timer_flag==1){
-		  state++;
-		  if(state>=8){
-			  state=0;
-		  }
+		  change_state(&state_q4);
 		  reset(0);
 	  }
 
