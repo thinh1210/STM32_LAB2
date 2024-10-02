@@ -131,7 +131,6 @@ int main(void)
 
   while (1)
   {
-	  updateLEDMatrix();
 	  if(actions[0].timer_flag==1){
 		  changecol();
 		  reset(0);

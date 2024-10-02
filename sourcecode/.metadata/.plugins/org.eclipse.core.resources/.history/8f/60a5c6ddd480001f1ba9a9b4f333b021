@@ -52,6 +52,7 @@ void init_state(){
 	    for( uint8_t i=0; i< MAX_LED_MATRIX; i++){
 	    	HAL_GPIO_WritePin(GPIOB, row_pin[i], 0);
 	    }
+
 }
 void changecol(){
 	state++;
