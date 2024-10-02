@@ -1,0 +1,9 @@
+../Core/Src/main.c:70:7:Setup_time	1
+../Core/Src/main.c:76:7:reset	1
+../Core/Src/main.c:81:7:timer_run	4
+../Core/Src/main.c:98:5:main	1
+../Core/Src/main.c:143:6:SystemClock_Config	3
+../Core/Src/main.c:180:13:MX_TIM2_Init	4
+../Core/Src/main.c:225:13:MX_GPIO_Init	1
+../Core/Src/main.c:278:6:HAL_TIM_PeriodElapsedCallback	1
+../Core/Src/main.c:287:6:Error_Handler	1
