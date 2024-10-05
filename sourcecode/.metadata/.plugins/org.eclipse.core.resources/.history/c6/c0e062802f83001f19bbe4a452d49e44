@@ -10,7 +10,6 @@
 
 #include<SEGMENT_7_LED.h>
 #include<main.h>
-
 #define EN0 0
 #define EN1 1
 #define EN2 2

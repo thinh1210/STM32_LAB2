@@ -131,7 +131,7 @@ int main(void)
   int buffer_led[]= {1,2,3,0};
   HAL_GPIO_WritePin(DOT_GPIO_Port,DOT_Pin, RESET);
   Setup_time(0, 500);
-  Setup_time(1,1000);
+  Setup_time(0,1000);
   while(1){
 	  task_in_state_ex2(buffer_led[state_ex2]);
 	  if(actions[0].timer_flag==1){
@@ -140,7 +140,6 @@ int main(void)
 	  }
 	  if(actions[1].timer_flag==1){
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		  reset(1);
 	  }
 
     /* USER CODE END WHILE */
