@@ -138,9 +138,9 @@ int main(void)
 		  change_state(&state_q4);
 		  reset(0);
 	  }
-	  if(actions[1].timer_flag==1){
+	  if(actions[1].timer_flag=ss=1){
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		  reset(1);
+		  reset(0);
 	  }
 
     /* USER CODE END WHILE */
