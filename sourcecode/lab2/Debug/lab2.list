@@ -802,8 +802,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  Setup_time(0, 50);
- 80006b8:	2132      	movs	r1, #50	@ 0x32
+  Setup_time(0, 20);
+ 80006b8:	2114      	movs	r1, #20
  80006ba:	2000      	movs	r0, #0
  80006bc:	f7ff ff48 	bl	8000550 <Setup_time>
   int state=0;
