@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00009dd4  00000000  00000000  0002482d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000823ba  00000000  00000000  0002e601  2**0
+ 18 .debug_str    000823b9  00000000  00000000  0002e601  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000b09bb  2**0
+ 19 .comment      00000043  00000000  00000000  000b09ba  2**0
                   CONTENTS, READONLY
  20 .debug_frame  0000273c  00000000  00000000  000b0a00  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -161,7 +161,7 @@ void updateLEDMatrix_shift (int index){
  80001c6:	b084      	sub	sp, #16
  80001c8:	af00      	add	r7, sp, #0
  80001ca:	6078      	str	r0, [r7, #4]
-	int realshift= (index+shift)%8;
+	int real_pos= (index+shift)%8;
  80001cc:	4bce      	ldr	r3, [pc, #824]	@ (8000508 <updateLEDMatrix_shift+0x344>)
  80001ce:	681a      	ldr	r2, [r3, #0]
  80001d0:	687b      	ldr	r3, [r7, #4]
@@ -228,7 +228,7 @@ void updateLEDMatrix_shift (int index){
  8000266:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  800026a:	48a8      	ldr	r0, [pc, #672]	@ (800050c <updateLEDMatrix_shift+0x348>)
  800026c:	f000 ff04 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  8000270:	4aa7      	ldr	r2, [pc, #668]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  8000272:	68fb      	ldr	r3, [r7, #12]
  8000274:	4413      	add	r3, r2
@@ -278,7 +278,7 @@ void updateLEDMatrix_shift (int index){
  80002d2:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  80002d6:	488d      	ldr	r0, [pc, #564]	@ (800050c <updateLEDMatrix_shift+0x348>)
  80002d8:	f000 fece 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  80002dc:	4a8c      	ldr	r2, [pc, #560]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  80002de:	68fb      	ldr	r3, [r7, #12]
  80002e0:	4413      	add	r3, r2
@@ -328,7 +328,7 @@ void updateLEDMatrix_shift (int index){
  800033e:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  8000342:	4872      	ldr	r0, [pc, #456]	@ (800050c <updateLEDMatrix_shift+0x348>)
  8000344:	f000 fe98 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  8000348:	4a71      	ldr	r2, [pc, #452]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  800034a:	68fb      	ldr	r3, [r7, #12]
  800034c:	4413      	add	r3, r2
@@ -378,7 +378,7 @@ void updateLEDMatrix_shift (int index){
  80003aa:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  80003ae:	4857      	ldr	r0, [pc, #348]	@ (800050c <updateLEDMatrix_shift+0x348>)
  80003b0:	f000 fe62 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  80003b4:	4a56      	ldr	r2, [pc, #344]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  80003b6:	68fb      	ldr	r3, [r7, #12]
  80003b8:	4413      	add	r3, r2
@@ -428,7 +428,7 @@ void updateLEDMatrix_shift (int index){
  8000416:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  800041a:	483c      	ldr	r0, [pc, #240]	@ (800050c <updateLEDMatrix_shift+0x348>)
  800041c:	f000 fe2c 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  8000420:	4a3b      	ldr	r2, [pc, #236]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  8000422:	68fb      	ldr	r3, [r7, #12]
  8000424:	4413      	add	r3, r2
@@ -478,7 +478,7 @@ void updateLEDMatrix_shift (int index){
  8000482:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  8000486:	4821      	ldr	r0, [pc, #132]	@ (800050c <updateLEDMatrix_shift+0x348>)
  8000488:	f000 fdf6 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  800048c:	4a20      	ldr	r2, [pc, #128]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  800048e:	68fb      	ldr	r3, [r7, #12]
  8000490:	4413      	add	r3, r2
@@ -528,7 +528,7 @@ void updateLEDMatrix_shift (int index){
  80004ee:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  80004f2:	4806      	ldr	r0, [pc, #24]	@ (800050c <updateLEDMatrix_shift+0x348>)
  80004f4:	f000 fdc0 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  80004f8:	4a05      	ldr	r2, [pc, #20]	@ (8000510 <updateLEDMatrix_shift+0x34c>)
  80004fa:	68fb      	ldr	r3, [r7, #12]
  80004fc:	4413      	add	r3, r2
@@ -582,7 +582,7 @@ void updateLEDMatrix_shift (int index){
  8000566:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  800056a:	4808      	ldr	r0, [pc, #32]	@ (800058c <updateLEDMatrix_shift+0x3c8>)
  800056c:	f000 fd84 	bl	8001078 <HAL_GPIO_WritePin>
-	            updaterow(matrix_buffer[realshift]);
+	            updaterow(matrix_buffer[real_pos]);
  8000570:	4a07      	ldr	r2, [pc, #28]	@ (8000590 <updateLEDMatrix_shift+0x3cc>)
  8000572:	68fb      	ldr	r3, [r7, #12]
  8000574:	4413      	add	r3, r2
