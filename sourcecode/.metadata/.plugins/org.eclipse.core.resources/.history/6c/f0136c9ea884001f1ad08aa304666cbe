@@ -129,7 +129,12 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+  updateClockBuffer();
   while(1){
+	  update7SEG(EN0);
+	  update7SEG(EN1);
+	  update7SEG(EN2);
+	  update7SEG(EN3);
 	  second++;
 	  	  if(second>=60){
 	  		  second=0;

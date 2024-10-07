@@ -72,7 +72,7 @@ void change_state(int *state){
 	}
 }
 
-int hour=15, minute=8; second=50;
+//int hour=0, 	minute=0,  		second=0;
 
 void updateClockBuffer(){
 	  led_buffer[0]=hour/10;
