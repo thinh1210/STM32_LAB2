@@ -150,10 +150,9 @@ void updateLEDMatrix (int index){
 
 void updateshift(){
 	shift++;
-	if(shift>=8) shift=0;
 }
 void updateLEDMatrix_shift (int index){
-	int real_pos= (index+shift)%8;
+	int realshift= (index+shift)%8;
 	switch (index) {
 			case 0:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, RESET);
@@ -164,7 +163,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 				break;
 			case 1:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, 	SET);
@@ -175,7 +174,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 				break;
 			case 2:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, SET);
@@ -186,7 +185,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 	            break;
 			case 3:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, SET);
@@ -197,7 +196,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 	            break;
 			case 4:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, SET);
@@ -208,7 +207,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 	            break;
 			case 5:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, SET);
@@ -219,7 +218,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, RESET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 	            break;
 			case 6:
 	            HAL_GPIO_WritePin(ENM0_GPIO_Port,ENM0_Pin, SET);
@@ -230,7 +229,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, RESET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, SET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 	            break;
 
 			case 7:
@@ -242,7 +241,7 @@ void updateLEDMatrix_shift (int index){
 	            HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, SET);
 	            HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, SET);
 	            HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, RESET);
-	            updaterow(matrix_buffer[real_pos]);
+	            updaterow(matrix_buffer[realshift]);
 	            break;
 			default:
 				break;
