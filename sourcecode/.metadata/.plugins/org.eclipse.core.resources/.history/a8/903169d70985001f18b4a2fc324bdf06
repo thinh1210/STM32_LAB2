@@ -131,7 +131,7 @@ int main(void)
   updateTime();
   Setup_time(0, 1000); // update Time
   Setup_time(1, 1000); // update DOT
-  Setup_time(2, 50);// update segment7led
+  Setup_time(2, 20);// update segment7led
   int state=0;
   while(1){
 	  update7SEG(state);
