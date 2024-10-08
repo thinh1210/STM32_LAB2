@@ -19,7 +19,9 @@
 const int MAX_LED = 4;
 int index_led = 0;
 int led_buffer[4] = {1,2,3,4};
-
+int hour=15;
+int minute= 8;
+int sencond=50;
 void update7SEG(int index){
 	switch (index) {
 		case EN0:
@@ -73,13 +75,11 @@ void change_state(int *state){
 	}
 }
 
-int hour=15;
-int minute=8;
-int second=50;
+int hour=15, 	minute=8,  		second=50;
 
 void updateClockBuffer(){
 	  led_buffer[0]=hour/10;
-	  led_buffer[1]=(hour+10)%10;
+	  led_buffer[1]=hour%10;
 	  led_buffer[2]=minute/10;
 	  led_buffer[3]=minute%10;
 }
@@ -94,7 +94,7 @@ void updateTime(){
 		  minute=0;
 		  hour++;
 	  }
-	  if(hour>=24){
+	  if(hour>=12){
 		  hour=0;
 	  }
 	  updateClockBuffer();
